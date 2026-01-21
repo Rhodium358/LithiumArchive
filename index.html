@@ -37,14 +37,6 @@
       margin: 0;
       letter-spacing: 1px;
     }
-    nav .logo {
-      display: flex;
-      align-items: center;
-    }
-    nav .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
     .lang-switch {
       display: flex;
       gap: 10px;
@@ -116,10 +108,7 @@
 </head>
 <body>
   <nav>
-    <div class="logo">
-      <img src="assets/logo.png" alt="Lithium Logo">
-      <h1>Lithium</h1>
-    </div>
+    <h1>Lithium</h1>
     <div class="lang-switch">
       <button onclick="setLang('en')">English</button>
       <button onclick="setLang('tr')">Türkçe</button>
@@ -182,4 +171,15 @@
     const readmeEN = `
     <h2>🇬🇧 English Description – Lithium Project</h2>
     <p>Lithium provides custom Windows ISOs based on Windows 10 21H2. The goal is to build streamlined, optimized, and secure environments. All modifications are tested and update-safe.</p>
-    <h3>
+    <h3>🔧 Tools Used</h3>
+    <ul>
+      <li>MSMG Toolkit → Component removal and customization</li>
+      <li>Sysprep + CopyProfile → Profile transfer and system generalization</li>
+      <li>Explorer Patcher → Classic Start menu and taskbar tweaks</li>
+      <li>Registry Tweaks → Performance and privacy adjustments</li>
+      <li>SetupComplete.cmd → Post-install automation</li>
+    </ul>
+    <h3>🧱 ISO Structure</h3>
+    <ul>
+      <li>Base: Windows 10 21H2</li>
+      <li>
