@@ -1,5 +1,11 @@
 # Lithium ISOS
 
+<p align="center">
+  <a href="https://example.com/iso-link">
+    <img src="https://img.shields.io/badge/Download-ISO-blue?style=for-the-badge" />
+  </a>
+</p>
+
 ## 🇹🇷 Türkçe Açıklama
 
 Bu proje, **MSMG Toolkit** kullanılarak özelleştirilmiş Windows ISO’ların hazırlanmasını içerir.  
