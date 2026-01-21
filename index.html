@@ -5,38 +5,50 @@
   <title>Lithium – Custom Windows ISOs</title>
   <meta name="description" content="Lithium: Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Premium font -->
+  <!-- Premium fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-      color: #fff;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: #e5e5e5;
       line-height: 1.8;
     }
     header {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 100px 20px 40px;
       position: relative;
     }
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3.5em;
       margin-bottom: 20px;
+      color: #d4af37; /* altın rengi */
     }
-    p { font-size: 1.3em; margin-bottom: 40px; max-width: 700px; margin-left:auto; margin-right:auto; }
+    p {
+      font-size: 1.3em;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left:auto;
+      margin-right:auto;
+    }
     a.button {
-      padding: 16px 32px;
-      background: #00bcd4;
-      color: white;
+      padding: 14px 28px;
+      background: transparent;
+      border: 2px solid #d4af37;
+      color: #d4af37;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: bold;
-      transition: transform 0.2s, background 0.3s;
+      transition: transform 0.2s, background 0.3s, color 0.3s;
       display: inline-block;
     }
-    a.button:hover { background: #0097a7; transform: scale(1.05); }
+    a.button:hover {
+      background: #d4af37;
+      color: #000;
+      transform: scale(1.05);
+    }
     .lang-switch {
       position: absolute;
       top: 20px;
@@ -45,23 +57,34 @@
     .lang-switch button {
       margin: 0 5px;
       padding: 8px 16px;
-      border: none;
+      border: 1px solid #d4af37;
+      background: transparent;
+      color: #d4af37;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
     }
-    .lang-switch button:hover { opacity: 0.8; }
+    .lang-switch button:hover {
+      background: #d4af37;
+      color: #000;
+    }
     main {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 60px auto;
       padding: 20px;
     }
-    h2 { margin-top: 40px; font-family: 'Playfair Display', serif; font-size: 2em; }
+    h2 {
+      margin-top: 40px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      color: #d4af37;
+    }
     footer {
       text-align: center;
       padding: 30px;
       font-size: 0.9em;
       opacity: 0.7;
+      border-top: 1px solid #333;
     }
     @media (max-width: 600px) {
       h1 { font-size: 2.2em; }
@@ -73,10 +96,10 @@
   <header>
     <h1 id="title">⚡ Lithium</h1>
     <p id="desc">Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.</p>
-    <a href="https://example.com/Lithium.iso" class="button" id="download">📥 Download ISO</a>
+    <a href="https://mega.nz/file/9vwVjbKL#pT_6kLL00EjCrP06Q2oBOK0tHSv9ma1IpM9Urjnr-z0" class="button" id="download">📥 Download ISO</a>
     <div class="lang-switch">
-      <button onclick="setLang('en')" style="background:#00bcd4;color:white;">English</button>
-      <button onclick="setLang('tr')" style="background:#ff9800;color:white;">Türkçe</button>
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('tr')">Türkçe</button>
     </div>
   </header>
 
@@ -97,13 +120,6 @@
       <li>Registry tweak’leri ile performans ve gizlilik</li>
       <li>Güncellemelerle uyumlu minimal sistem</li>
     </ul>
-    <h3>Kurulum</h3>
-    <ol>
-      <li>ISO dosyasını indirin</li>
-      <li>USB’ye yazdırın (Rufus vb.)</li>
-      <li>Standart Windows adımlarını izleyin</li>
-      <li>İlk oturumda tweak’ler otomatik uygulanır</li>
-    </ol>
     `;
 
     const readmeEN = `
@@ -118,13 +134,6 @@
       <li>Registry tweaks for performance & privacy</li>
       <li>Tested minimal system, compatible with updates</li>
     </ul>
-    <h3>Installation</h3>
-    <ol>
-      <li>Download the ISO</li>
-      <li>Write ISO to USB (Rufus etc.)</li>
-      <li>Follow standard Windows steps</li>
-      <li>On first login tweaks auto apply</li>
-    </ol>
     `;
 
     function setLang(lang) {
