@@ -12,22 +12,14 @@
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      line-height: 1.6;
+    }
+    header {
       text-align: center;
+      padding: 60px 20px 20px;
     }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-      max-width: 600px;
-    }
+    h1 { font-size: 3em; margin-bottom: 10px; }
+    p { font-size: 1.2em; margin-bottom: 30px; }
     a.button {
       padding: 14px 28px;
       background: #00bcd4;
@@ -37,22 +29,51 @@
       font-weight: bold;
       transition: transform 0.2s, background 0.3s;
     }
-    a.button:hover {
-      background: #0097a7;
-      transform: scale(1.05);
+    a.button:hover { background: #0097a7; transform: scale(1.05); }
+    main {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0,0,0,0.4);
+      padding: 30px;
+      border-radius: 10px;
     }
+    h2 { margin-top: 30px; }
     footer {
-      position: absolute;
-      bottom: 20px;
+      text-align: center;
+      padding: 20px;
       font-size: 0.9em;
       opacity: 0.7;
     }
   </style>
 </head>
 <body>
-  <h1>⚡ Lithium</h1>
-  <p>Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.</p>
-  <a href="https://example.com/Lithium.iso" class="button">📥 Download ISO</a>
+  <header>
+    <h1>⚡ Lithium</h1>
+    <p>Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.</p>
+    <a href="https://example.com/Lithium.iso" class="button">📥 Download ISO</a>
+  </header>
+
+  <main>
+    <h2>📖 README</h2>
+    <p>
+      Lithium is a project for building custom Windows ISOs using MSMG Toolkit.  
+      It focuses on minimalism, security, and performance.  
+      Supports Windows 10 LTSC/IoT and Windows 11 builds.  
+    </p>
+    <h3>Features</h3>
+    <ul>
+      <li>Safe removal of unnecessary components</li>
+      <li>Automated installation of Chrome & LibreOffice</li>
+      <li>Registry tweaks for privacy & performance</li>
+      <li>Persistent unattended setup</li>
+    </ul>
+    <h3>Usage</h3>
+    <p>
+      Download the ISO, burn it to USB, and install.  
+      All tweaks and programs are applied automatically during setup.  
+    </p>
+  </main>
+
   <footer>© 2026 Rhodium358 – Minimal & Secure Builds</footer>
 </body>
 </html>
