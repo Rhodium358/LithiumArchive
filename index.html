@@ -5,33 +5,33 @@
   <title>Lithium – Custom Windows ISOs</title>
   <meta name="description" content="Lithium: Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Lüks font -->
+  <!-- Premium font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
       color: #fff;
       line-height: 1.8;
     }
     header {
       text-align: center;
-      padding: 60px 20px 20px;
+      padding: 80px 20px 40px;
       position: relative;
     }
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      margin-bottom: 10px;
+      font-size: 3.5em;
+      margin-bottom: 20px;
     }
-    p { font-size: 1.2em; margin-bottom: 30px; }
+    p { font-size: 1.3em; margin-bottom: 40px; max-width: 700px; margin-left:auto; margin-right:auto; }
     a.button {
-      padding: 14px 28px;
+      padding: 16px 32px;
       background: #00bcd4;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
       transition: transform 0.2s, background 0.3s;
       display: inline-block;
@@ -52,20 +52,19 @@
     }
     .lang-switch button:hover { opacity: 0.8; }
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
       padding: 20px;
-      /* Arkası boş → kutu yok */
     }
-    h2 { margin-top: 30px; font-family: 'Playfair Display', serif; }
+    h2 { margin-top: 40px; font-family: 'Playfair Display', serif; font-size: 2em; }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       font-size: 0.9em;
       opacity: 0.7;
     }
     @media (max-width: 600px) {
-      h1 { font-size: 2em; }
+      h1 { font-size: 2.2em; }
       p { font-size: 1em; }
     }
   </style>
@@ -98,6 +97,13 @@
       <li>Registry tweak’leri ile performans ve gizlilik</li>
       <li>Güncellemelerle uyumlu minimal sistem</li>
     </ul>
+    <h3>Kurulum</h3>
+    <ol>
+      <li>ISO dosyasını indirin</li>
+      <li>USB’ye yazdırın (Rufus vb.)</li>
+      <li>Standart Windows adımlarını izleyin</li>
+      <li>İlk oturumda tweak’ler otomatik uygulanır</li>
+    </ol>
     `;
 
     const readmeEN = `
@@ -112,6 +118,13 @@
       <li>Registry tweaks for performance & privacy</li>
       <li>Tested minimal system, compatible with updates</li>
     </ul>
+    <h3>Installation</h3>
+    <ol>
+      <li>Download the ISO</li>
+      <li>Write ISO to USB (Rufus etc.)</li>
+      <li>Follow standard Windows steps</li>
+      <li>On first login tweaks auto apply</li>
+    </ol>
     `;
 
     function setLang(lang) {
