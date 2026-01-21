@@ -4,21 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lithium – Custom Windows ISOs</title>
-  <!-- Yeni fontlar -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-      background-image: repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0.05) 0px,
-        rgba(255,255,255,0.05) 2px,
-        transparent 2px,
-        transparent 6px
-      );
-      background-size: 20px 20px;
+      background-color: #000; /* Tam siyah arka plan */
       color: #f5f5f5;
       line-height: 1.8;
     }
@@ -175,7 +166,7 @@
     </ul>
     `;
 
-    const readmeEN = `
+        const readmeEN = `
     <h2>🇬🇧 English Description – Lithium Project</h2>
     <p>Lithium provides custom Windows ISOs based on Windows 10 21H2. The goal is to build streamlined, optimized, and secure environments. All modifications are tested and update-safe.</p>
     <h3>🔧 Tools Used</h3>
@@ -216,22 +207,3 @@
       <li>All configurations use open-source tools.</li>
     </ul>
     `;
-
-    function setLang(lang) {
-      if (lang === 'tr') {
-        document.getElementById('desc').innerText = 'MSMG Toolkit ile optimize edilmiş Windows 10 21H2 ISO’lar.';
-        document.getElementById('download').innerText = '📥 ISO İndir';
-        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Güvenli Sistemler';
-        document.getElementById('readme').innerHTML = readmeTR;
-      } else {
-        document.getElementById('desc').innerText = 'Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 21H2.';
-        document.getElementById('download').innerText = '📥 Download ISO';
-        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Secure Builds';
-        document.getElementById('readme').innerHTML = readmeEN;
-      }
-    }
-    // Varsayılan olarak İngilizce açılır
-    setLang('en');
-  </script>
-</body>
-</html>
