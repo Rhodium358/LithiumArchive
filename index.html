@@ -5,34 +5,47 @@
   <title>Lithium – Custom Windows ISOs</title>
   <meta name="description" content="Lithium: Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #121212;
-      color: #f0f0f0;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      padding: 50px;
     }
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       margin-bottom: 10px;
     }
     p {
       font-size: 1.2em;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      max-width: 600px;
     }
     a.button {
-      display: inline-block;
-      padding: 12px 24px;
+      padding: 14px 28px;
       background: #00bcd4;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: transform 0.2s, background 0.3s;
     }
     a.button:hover {
       background: #0097a7;
+      transform: scale(1.05);
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -40,5 +53,6 @@
   <h1>⚡ Lithium</h1>
   <p>Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.</p>
   <a href="https://example.com/Lithium.iso" class="button">📥 Download ISO</a>
+  <footer>© 2026 Rhodium358 – Minimal & Secure Builds</footer>
 </body>
 </html>
