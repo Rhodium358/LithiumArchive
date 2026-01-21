@@ -4,16 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lithium – Custom Windows ISOs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+  <!-- Yeni fontlar -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background-color: #000;
-      background-image: radial-gradient(#222 1px, transparent 1px),
-                        radial-gradient(#222 1px, transparent 1px);
-      background-size: 25px 25px;
-      background-position: 0 0, 12px 12px;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.05) 0px,
+        rgba(255,255,255,0.05) 2px,
+        transparent 2px,
+        transparent 6px
+      );
+      background-size: 20px 20px;
       color: #f5f5f5;
       line-height: 1.8;
     }
@@ -30,8 +35,8 @@
       flex-wrap: wrap;
     }
     nav h1 {
-      font-family: 'Quicksand', sans-serif;
-      font-size: 1.8em;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2em;
       color: #d4af37;
       margin: 0;
       letter-spacing: 1px;
@@ -51,7 +56,7 @@
       cursor: pointer;
       font-weight: 600;
       font-size: 0.95em;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
     .lang-switch button:hover {
       background: #d4af37;
@@ -62,7 +67,7 @@
       padding: 140px 20px 40px;
     }
     h2 {
-      font-family: 'Quicksand', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 2em;
       color: #d4af37;
     }
@@ -128,106 +133,89 @@
   <footer id="footer">© 2026 Rhodium358 – Minimal & Secure Builds</footer>
 
   <script>
-    const readmeTR = `Lithium, Windows 10 21H2 tabanlı özelleştirilmiş ISO’lar üretmek için geliştirilmiş bir projedir. Amaç: sade, optimize edilmiş ve güvenli bir Windows ortamı oluşturmak. Tüm değişiklikler güncellemelerle uyumlu olacak şekilde test edilmiştir.
+    const readmeTR = `
+    <h2>🇹🇷 Türkçe Açıklama – Lithium Projesi</h2>
+    <p>Lithium, Windows 10 21H2 tabanlı özelleştirilmiş ISO’lar üretmek için geliştirilmiş bir projedir. Amaç: sade, optimize edilmiş ve güvenli bir Windows ortamı oluşturmak. Tüm değişiklikler güncellemelerle uyumlu olacak şekilde test edilmiştir.</p>
+    <h3>🔧 Kullanılan Araçlar</h3>
+    <ul>
+      <li>MSMG Toolkit → Windows bileşenlerini kaldırma ve özelleştirme</li>
+      <li>Sysprep + CopyProfile → Kullanıcı profili aktarımı ve sistem genelleştirme</li>
+      <li>Explorer Patcher → Arayüz düzenlemeleri (klasik Başlat menüsü, görev çubuğu)</li>
+      <li>Registry Tweak’leri → Performans ve gizlilik için ayarlar</li>
+      <li>SetupComplete.cmd → Kurulum sonrası otomatik işlemler</li>
+    </ul>
+    <h3>🧱 ISO Yapısı</h3>
+    <ul>
+      <li>Taban: Windows 10 21H2</li>
+      <li>Gereksiz bileşenler kaldırıldı (OneDrive, Cortana, Xbox, vb.)</li>
+      <li>Explorer Patcher ile arayüz sadeleştirildi</li>
+      <li>Firefox, OpenOffice ve 7-Zip kurulum sonrası hazır gelir</li>
+      <li>Sağ tık menüsü özelleştirildi → gereksiz seçenekler kaldırıldı, sık kullanılan araçlar eklendi</li>
+      <li>Registry tweak’leri kalıcı ve güncellemelerle uyumlu</li>
+    </ul>
+    <h3>📦 Kurulum Adımları</h3>
+    <ol>
+      <li>ISO dosyasını indirin (Releases veya harici bağlantıdan).</li>
+      <li>Rufus ile USB’ye yazdırın (GPT + UEFI önerilir).</li>
+      <li>Kurulumu başlatın → standart Windows adımları izlenir.</li>
+      <li>İlk oturumda Explorer Patcher, registry ayarları ve program entegrasyonları otomatik uygulanır.</li>
+    </ol>
+    <h3>🧪 Test Süreci</h3>
+    <ul>
+      <li>VMware ve VirtualBox üzerinde test edildi.</li>
+      <li>Windows Update uyumluluğu kontrol edildi.</li>
+      <li>Sysprep sonrası SID ve aktivasyon tutarlılığı sağlandı.</li>
+      <li>Registry değişiklikleri belgelenmiş ve geri alınabilir.</li>
+    </ul>
+    <h3>📌 Notlar</h3>
+    <ul>
+      <li>ISO dosyaları GitHub’a yüklenmez, harici bağlantılarla paylaşılır.</li>
+      <li>.gitignore ile ISO/WIM gibi büyük dosyalar dışlanmıştır.</li>
+      <li>Tüm yapılandırmalar açık kaynak araçlarla yapılmıştır.</li>
+    </ul>
+    `;
 
-🔧 Kullanılan Araçlar
-MSMG Toolkit → Windows bileşenlerini kaldırma ve özelleştirme
-
-Sysprep + CopyProfile → Kullanıcı profili aktarımı ve sistem genelleştirme
-
-Explorer Patcher → Arayüz düzenlemeleri (klasik Başlat menüsü, görev çubuğu)
-
-Registry Tweak’leri → Performans ve gizlilik için ayarlar
-
-SetupComplete.cmd → Kurulum sonrası otomatik işlemler
-
-🧱 ISO Yapısı
-Taban: Windows 10 21H2
-
-Gereksiz bileşenler kaldırıldı (OneDrive, Cortana, Xbox, vb.)
-
-Explorer Patcher ile arayüz sadeleştirildi
-
-Firefox, OpenOffice ve 7-Zip kurulum sonrası hazır gelir
-
-Sağ tık menüsü özelleştirildi → gereksiz seçenekler kaldırıldı, sık kullanılan araçlar eklendi
-
-Registry tweak’leri kalıcı ve güncellemelerle uyumlu
-
-📦 Kurulum Adımları
-ISO dosyasını indirin (Releases veya harici bağlantıdan).
-
-Rufus ile USB’ye yazdırın (GPT + UEFI önerilir).
-
-Kurulumu başlatın → standart Windows adımları izlenir.
-
-İlk oturumda Explorer Patcher, registry ayarları ve program entegrasyonları otomatik uygulanır.
-
-🧪 Test Süreci
-VMware ve VirtualBox üzerinde test edildi.
-
-Windows Update uyumluluğu kontrol edildi.
-
-Sysprep sonrası SID ve aktivasyon tutarlılığı sağlandı.
-
-Registry değişiklikleri belgelenmiş ve geri alınabilir.
-
-📌 Notlar
-ISO dosyaları GitHub’a yüklenmez, harici bağlantılarla paylaşılır.
-
-.gitignore ile ISO/WIM gibi büyük dosyalar dışlanmıştır.
-
-Tüm yapılandırmalar açık kaynak araçlarla yapılmıştır.`; // Türkçe README metni buraya
-    const readmeEN = `Lithium provides custom Windows ISOs based on Windows 10 21H2. The goal is to build streamlined, optimized, and secure environments. All modifications are tested and update-safe.
-
-🔧 Tools Used
-MSMG Toolkit → Component removal and customization
-
-Sysprep + CopyProfile → Profile transfer and system generalization
-
-Explorer Patcher → Classic Start menu and taskbar tweaks
-
-Registry Tweaks → Performance and privacy adjustments
-
-SetupComplete.cmd → Post-install automation
-
-🧱 ISO Structure
-Base: Windows 10 21H2
-
-Removed unnecessary components (OneDrive, Cortana, Xbox, etc.)
-
-Explorer Patcher simplifies UI
-
-Firefox, OpenOffice, and 7-Zip included by default
-
-Context menu customized → streamlined options, useful shortcuts added
-
-Registry tweaks persistent and update-safe
-
-📦 Installation Steps
-Download ISO (from Releases or external link).
-
-Write ISO to USB using Rufus (GPT + UEFI recommended).
-
-Start setup → follow standard Windows installation steps.
-
-On first login, Explorer Patcher, registry tweaks, and integrated programs are applied automatically.
-
-🧪 Testing Process
-Tested in VMware and VirtualBox.
-
-Windows Update compatibility verified.
-
-Sysprep ensures SID and activation consistency.
-
-Registry changes documented and reversible.
-
-📌 Notes
-ISO files are not uploaded to GitHub, shared externally due to size.
-
-.gitignore excludes ISO/WIM and other large binaries.
-
-All configurations use open-source tools.                                              `; // İngilizce README metni buraya
+    const readmeEN = `
+    <h2>🇬🇧 English Description – Lithium Project</h2>
+    <p>Lithium provides custom Windows ISOs based on Windows 10 21H2. The goal is to build streamlined, optimized, and secure environments. All modifications are tested and update-safe.</p>
+    <h3>🔧 Tools Used</h3>
+    <ul>
+      <li>MSMG Toolkit → Component removal and customization</li>
+      <li>Sysprep + CopyProfile → Profile transfer and system generalization</li>
+      <li>Explorer Patcher → Classic Start menu and taskbar tweaks</li>
+      <li>Registry Tweaks → Performance and privacy adjustments</li>
+      <li>SetupComplete.cmd → Post-install automation</li>
+    </ul>
+    <h3>🧱 ISO Structure</h3>
+    <ul>
+      <li>Base: Windows 10 21H2</li>
+      <li>Removed unnecessary components (OneDrive, Cortana, Xbox, etc.)</li>
+      <li>Explorer Patcher simplifies UI</li>
+      <li>Firefox, OpenOffice, and 7-Zip included by default</li>
+      <li>Context menu customized → streamlined options, useful shortcuts added</li>
+      <li>Registry tweaks persistent and update-safe</li>
+    </ul>
+    <h3>📦 Installation Steps</h3>
+    <ol>
+      <li>Download ISO (from Releases or external link).</li>
+      <li>Write ISO to USB using Rufus (GPT + UEFI recommended).</li>
+      <li>Start setup → follow standard Windows installation steps.</li>
+      <li>On first login, Explorer Patcher, registry tweaks, and integrated programs are applied automatically.</li>
+    </ol>
+    <h3>🧪 Testing Process</h3>
+    <ul>
+      <li>Tested in VMware and VirtualBox.</li>
+      <li>Windows Update compatibility verified.</li>
+      <li>Sysprep ensures SID and activation consistency.</li>
+      <li>Registry changes documented and reversible.</li>
+    </ul>
+    <h3>📌 Notes</h3>
+    <ul>
+      <li>ISO files are not uploaded to GitHub, shared externally due to size.</li>
+      <li>.gitignore excludes ISO/WIM and other large binaries.</li>
+      <li>All configurations use open-source tools.</li>
+    </ul>
+    `;
 
     function setLang(lang) {
       if (lang === 'tr') {
@@ -242,6 +230,7 @@ All configurations use open-source tools.                                       
         document.getElementById('readme').innerHTML = readmeEN;
       }
     }
+    // Varsayılan olarak İngilizce açılır
     setLang('en');
   </script>
 </body>
