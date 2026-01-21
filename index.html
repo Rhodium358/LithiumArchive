@@ -14,13 +14,13 @@
       background-image: radial-gradient(#111 1px, transparent 1px),
                         radial-gradient(#111 1px, transparent 1px);
       background-size: 20px 20px;
-      background-position: 0 0, 10px 10px; /* desenli siyah */
+      background-position: 0 0, 10px 10px;
       color: #f5f5f5;
       line-height: 1.8;
     }
     /* Üst bar */
     nav {
-      background: rgba(0,0,0,0.85);
+      background: #0b3d2e; /* Rolex yeşili */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -55,18 +55,6 @@
       background: #d4af37;
       color: #000;
     }
-    /* Hamburger menü */
-    .menu-icon {
-      cursor: pointer;
-      display: block;
-    }
-    .menu-icon div {
-      width: 28px;
-      height: 3px;
-      background-color: #d4af37;
-      margin: 5px 0;
-      border-radius: 2px;
-    }
     header {
       text-align: center;
       padding: 140px 20px 40px; /* üst bar için boşluk */
@@ -78,7 +66,7 @@
     }
     p {
       font-size: 1.2em;
-      max-width: 700px;
+      max-width: 900px;
       margin: 20px auto;
     }
     a.button {
@@ -109,7 +97,6 @@
       opacity: 0.7;
       border-top: 1px solid #333;
     }
-    /* Responsive uyum */
     @media (max-width: 768px) {
       nav { flex-direction: column; align-items: flex-start; }
       .lang-switch { margin-top: 10px; }
@@ -122,11 +109,6 @@
 <body>
   <nav>
     <h1>Lithium</h1>
-    <div class="menu-icon">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
     <div class="lang-switch">
       <button onclick="setLang('en')">English</button>
       <button onclick="setLang('tr')">Türkçe</button>
@@ -135,7 +117,7 @@
 
   <header>
     <h2 id="title">⚡ Custom Windows ISOs</h2>
-    <p id="desc">MSMG Toolkit ile optimize edilmiş Windows 10 & 11 ISO’lar.</p>
+    <p id="desc">MSMG Toolkit ile optimize edilmiş Windows 10 21H2 ISO’lar.</p>
     <a href="https://example.com/Lithium.iso" class="button" id="download">📥 Download ISO</a>
   </header>
 
@@ -145,29 +127,48 @@
 
   <script>
     const readmeTR = `
-    <h2>🇹🇷 Türkçe Açıklama</h2>
-    <p>Bu proje, <b>MSMG Toolkit</b> kullanılarak özelleştirilmiş Windows ISO’ların hazırlanmasını içerir.<br>
-    Amaç: Daha sade, optimize edilmiş ve güvenli Windows ortamları oluşturmak.</p>
+    <h2>🇹🇷 Türkçe Açıklama – Lithium Projesi</h2>
+    <p>Lithium, Windows 10 21H2 tabanlı özelleştirilmiş ISO’lar üretmek için geliştirilmiş bir projedir. Amaç: sade, optimize edilmiş ve güvenli bir Windows ortamı oluşturmak. Tüm değişiklikler güncellemelerle uyumlu olacak şekilde test edilmiştir.</p>
+    <h3>🔧 Kullanılan Araçlar</h3>
+    <ul>
+      <li>MSMG Toolkit → Windows bileşenlerini kaldırma ve özelleştirme</li>
+      <li>Sysprep + CopyProfile → Kullanıcı profili aktarımı ve sistem genelleştirme</li>
+      <li>Explorer Patcher → Arayüz düzenlemeleri (klasik Başlat menüsü, görev çubuğu)</li>
+      <li>Registry Tweak’leri → Performans ve gizlilik için ayarlar</li>
+      <li>SetupComplete.cmd → Kurulum sonrası otomatik işlemler</li>
+    </ul>
+    <h3>🧱 ISO Yapısı</h3>
+    <ul>
+      <li>Taban: Windows 10 21H2</li>
+      <li>Gereksiz bileşenler kaldırıldı (OneDrive, Cortana, Xbox, vb.)</li>
+      <li>Explorer Patcher ile arayüz sadeleştirildi</li>
+      <li>Firefox, OpenOffice ve 7-Zip kurulum sonrası hazır gelir</li>
+      <li>Sağ tık menüsü özelleştirildi → gereksiz seçenekler kaldırıldı, sık kullanılan araçlar eklendi</li>
+      <li>Registry tweak’leri kalıcı ve güncellemelerle uyumlu</li>
+    </ul>
+    <h3>📦 Kurulum Adımları</h3>
+    <ol>
+      <li>ISO dosyasını indirin (Releases veya harici bağlantıdan).</li>
+      <li>Rufus ile USB’ye yazdırın (GPT + UEFI önerilir).</li>
+      <li>Kurulumu başlatın → standart Windows adımları izlenir.</li>
+      <li>İlk oturumda Explorer Patcher, registry ayarları ve program entegrasyonları otomatik uygulanır.</li>
+    </ol>
+    <h3>🧪 Test Süreci</h3>
+    <ul>
+      <li>VMware ve VirtualBox üzerinde test edildi.</li>
+      <li>Windows Update uyumluluğu kontrol edildi.</li>
+      <li>Sysprep sonrası SID ve aktivasyon tutarlılığı sağlandı.</li>
+      <li>Registry değişiklikleri belgelenmiş ve geri alınabilir.</li>
+    </ul>
+    <h3>📌 Notlar</h3>
+    <ul>
+      <li>ISO dosyaları GitHub’a yüklenmez, harici bağlantılarla paylaşılır.</li>
+      <li>.gitignore ile ISO/WIM gibi büyük dosyalar dışlanmıştır.</li>
+      <li>Tüm yapılandırmalar açık kaynak araçlarla yapılmıştır.</li>
+    </ul>
     `;
+
     const readmeEN = `
-    <h2>🇬🇧 English Description</h2>
-    <p>This project provides <b>custom Windows ISOs</b> created with <b>MSMG Toolkit</b>.<br>
-    Goal: Build streamlined, optimized, and secure Windows environments.</p>
-    `;
-    function setLang(lang) {
-      if(lang === 'tr') {
-        document.getElementById('desc').innerText = 'MSMG Toolkit ile hazırlanmış, Windows 10 & 11 için optimize edilmiş özel ISO\'lar.';
-        document.getElementById('download').innerText = '📥 ISO İndir';
-        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Güvenli Sistemler';
-        document.getElementById('readme').innerHTML = readmeTR;
-      } else {
-        document.getElementById('desc').innerText = 'Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.';
-        document.getElementById('download').innerText = '📥 Download ISO';
-        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Secure Builds';
-        document.getElementById('readme').innerHTML = readmeEN;
-      }
-    }
-    setLang('en');
-  </script>
-</body>
-</html>
+    <h2>🇬🇧 English Description – Lithium Project</h2>
+    <p>Lithium provides custom Windows ISOs based on Windows 10 21H2. The goal is to build streamlined, optimized, and secure environments. All modifications are tested and update-safe.</p>
+    <
