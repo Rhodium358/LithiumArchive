@@ -16,64 +16,128 @@
     }
     header {
       text-align: center;
-      padding: 60px 20px 20px;
+      padding: 40px 20px;
     }
-    h1 { font-size: 3em; margin-bottom: 10px; }
-    p { font-size: 1.2em; margin-bottom: 30px; }
+    h1 { font-size: 2.5em; margin-bottom: 10px; }
+    p { font-size: 1.1em; margin-bottom: 20px; }
     a.button {
-      padding: 14px 28px;
+      padding: 12px 24px;
       background: #00bcd4;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
       transition: transform 0.2s, background 0.3s;
+      display: inline-block;
     }
     a.button:hover { background: #0097a7; transform: scale(1.05); }
+    .lang-switch {
+      margin-top: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { opacity: 0.8; }
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       background: rgba(0,0,0,0.4);
-      padding: 30px;
+      padding: 20px;
       border-radius: 10px;
     }
-    h2 { margin-top: 30px; }
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
       opacity: 0.7;
     }
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      p { font-size: 1em; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>⚡ Lithium</h1>
-    <p>Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.</p>
-    <a href="https://example.com/Lithium.iso" class="button">📥 Download ISO</a>
+    <h1 id="title">⚡ Lithium</h1>
+    <p id="desc">Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.</p>
+    <a href="https://example.com/Lithium.iso" class="button" id="download">📥 Download ISO</a>
+    <div class="lang-switch">
+      <button onclick="setLang('en')" style="background:#00bcd4;color:white;">English</button>
+      <button onclick="setLang('tr')" style="background:#ff9800;color:white;">Türkçe</button>
+    </div>
   </header>
 
-  <main>
-    <h2>📖 README</h2>
-    <p>
-      Lithium is a project for building custom Windows ISOs using MSMG Toolkit.  
-      It focuses on minimalism, security, and performance.  
-      Supports Windows 10 LTSC/IoT and Windows 11 builds.  
-    </p>
-    <h3>Features</h3>
-    <ul>
-      <li>Safe removal of unnecessary components</li>
-      <li>Automated installation of Chrome & LibreOffice</li>
-      <li>Registry tweaks for privacy & performance</li>
-      <li>Persistent unattended setup</li>
-    </ul>
-    <h3>Usage</h3>
-    <p>
-      Download the ISO, burn it to USB, and install.  
-      All tweaks and programs are applied automatically during setup.  
-    </p>
+  <main id="readme">
+    <!-- Buraya README içeriği dil seçiciye göre gelecek -->
   </main>
 
-  <footer>© 2026 Rhodium358 – Minimal & Secure Builds</footer>
+  <footer id="footer">© 2026 Rhodium358 – Minimal & Secure Builds</footer>
+
+  <script>
+    const readmeTR = `
+    <h2>🇹🇷 Türkçe Açıklama</h2>
+    <p>Bu proje, <b>MSMG Toolkit</b> kullanılarak özelleştirilmiş Windows ISO’ların hazırlanmasını içerir.<br>
+    Amaç: Daha sade, optimize edilmiş ve güvenli Windows ortamları oluşturmak.</p>
+    <h3>Özellikler</h3>
+    <ul>
+      <li>MSMG Toolkit ile bileşen temizleme ve özelleştirme</li>
+      <li>Sysprep + CopyProfile ile kullanıcı profili aktarımı</li>
+      <li>Explorer Patcher entegrasyonu</li>
+      <li>Registry tweak’leri ile performans ve gizlilik</li>
+      <li>Güncellemelerle uyumlu minimal sistem</li>
+    </ul>
+    <h3>Kurulum</h3>
+    <ol>
+      <li>ISO dosyasını indirin</li>
+      <li>USB’ye yazdırın (Rufus vb.)</li>
+      <li>Standart Windows adımlarını izleyin</li>
+      <li>İlk oturumda tweak’ler otomatik uygulanır</li>
+    </ol>
+    `;
+
+    const readmeEN = `
+    <h2>🇬🇧 English Description</h2>
+    <p>This project provides <b>custom Windows ISOs</b> created with <b>MSMG Toolkit</b>.<br>
+    Goal: Build streamlined, optimized, and secure Windows environments.</p>
+    <h3>Features</h3>
+    <ul>
+      <li>MSMG Toolkit for component removal and customization</li>
+      <li>Sysprep + CopyProfile for profile transfer</li>
+      <li>Explorer Patcher integration</li>
+      <li>Registry tweaks for performance & privacy</li>
+      <li>Tested minimal system, compatible with updates</li>
+    </ul>
+    <h3>Installation</h3>
+    <ol>
+      <li>Download the ISO</li>
+      <li>Write ISO to USB (Rufus etc.)</li>
+      <li>Follow standard Windows steps</li>
+      <li>On first login tweaks auto apply</li>
+    </ol>
+    `;
+
+    function setLang(lang) {
+      if(lang === 'tr') {
+        document.getElementById('desc').innerText = 'MSMG Toolkit ile hazırlanmış, Windows 10 & 11 için optimize edilmiş özel ISO\'lar.';
+        document.getElementById('download').innerText = '📥 ISO İndir';
+        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Güvenli Sistemler';
+        document.getElementById('readme').innerHTML = readmeTR;
+      } else {
+        document.getElementById('desc').innerText = 'Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.';
+        document.getElementById('download').innerText = '📥 Download ISO';
+        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Secure Builds';
+        document.getElementById('readme').innerHTML = readmeEN;
+      }
+    }
+
+    // Varsayılan dil: English
+    setLang('en');
+  </script>
 </body>
 </html>
