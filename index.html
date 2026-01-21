@@ -3,35 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <title>Lithium – Custom Windows ISOs</title>
-  <meta name="description" content="Lithium: Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Premium fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Yumuşak fontlar -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #000000, #1a1a1a);
-      color: #e5e5e5;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #0b3d2e, #004d40); /* Rolex yeşili */
+      color: #f5f5f5;
       line-height: 1.8;
+    }
+    /* Üst bar */
+    nav {
+      background: #0b3d2e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    nav h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.8em;
+      color: #d4af37; /* altın */
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    .lang-switch {
+      display: flex;
+      gap: 10px;
+    }
+    .lang-switch button {
+      padding: 6px 12px;
+      border: 1px solid #d4af37;
+      background: transparent;
+      color: #d4af37;
+      border-radius: 20px; /* yuvarlak köşeler */
+      cursor: pointer;
+      font-weight: 600;
+      font-family: 'Nunito', sans-serif;
+    }
+    .lang-switch button:hover {
+      background: #d4af37;
+      color: #0b3d2e;
+    }
+    /* Hamburger menü */
+    .menu-icon {
+      cursor: pointer;
+      display: block;
+    }
+    .menu-icon div {
+      width: 28px;
+      height: 3px;
+      background-color: #d4af37;
+      margin: 5px 0;
+      border-radius: 2px;
     }
     header {
       text-align: center;
-      padding: 100px 20px 40px;
-      position: relative;
+      padding: 120px 20px 40px;
     }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5em;
-      margin-bottom: 20px;
-      color: #d4af37; /* altın rengi */
+    h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 2em;
+      color: #d4af37;
     }
     p {
-      font-size: 1.3em;
-      margin-bottom: 40px;
+      font-size: 1.2em;
       max-width: 700px;
-      margin-left:auto;
-      margin-right:auto;
+      margin: 20px auto;
     }
     a.button {
       padding: 14px 28px;
@@ -39,45 +83,20 @@
       border: 2px solid #d4af37;
       color: #d4af37;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 25px; /* daha yumuşak */
       font-weight: bold;
       transition: transform 0.2s, background 0.3s, color 0.3s;
       display: inline-block;
     }
     a.button:hover {
       background: #d4af37;
-      color: #000;
+      color: #0b3d2e;
       transform: scale(1.05);
-    }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    .lang-switch button {
-      margin: 0 5px;
-      padding: 8px 16px;
-      border: 1px solid #d4af37;
-      background: transparent;
-      color: #d4af37;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .lang-switch button:hover {
-      background: #d4af37;
-      color: #000;
     }
     main {
       max-width: 1000px;
-      margin: 60px auto;
+      margin: 40px auto;
       padding: 20px;
-    }
-    h2 {
-      margin-top: 40px;
-      font-family: 'Playfair Display', serif;
-      font-size: 2em;
-      color: #d4af37;
     }
     footer {
       text-align: center;
@@ -86,21 +105,26 @@
       opacity: 0.7;
       border-top: 1px solid #333;
     }
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2em; }
-      p { font-size: 1em; }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <h1 id="title">⚡ Lithium</h1>
-    <p id="desc">Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.</p>
-    <a href="https://mega.nz/file/9vwVjbKL#pT_6kLL00EjCrP06Q2oBOK0tHSv9ma1IpM9Urjnr-z0" class="button" id="download">📥 Download ISO</a>
+  <nav>
+    <h1>Lithium</h1>
+    <div class="menu-icon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <div class="lang-switch">
       <button onclick="setLang('en')">English</button>
       <button onclick="setLang('tr')">Türkçe</button>
     </div>
+  </nav>
+
+  <header>
+    <h2 id="title">⚡ Custom Windows ISOs</h2>
+    <p id="desc">MSMG Toolkit ile optimize edilmiş Windows 10 & 11 ISO’lar.</p>
+    <a href="https://example.com/Lithium.iso" class="button" id="download">📥 Download ISO</a>
   </header>
 
   <main id="readme"></main>
@@ -112,30 +136,12 @@
     <h2>🇹🇷 Türkçe Açıklama</h2>
     <p>Bu proje, <b>MSMG Toolkit</b> kullanılarak özelleştirilmiş Windows ISO’ların hazırlanmasını içerir.<br>
     Amaç: Daha sade, optimize edilmiş ve güvenli Windows ortamları oluşturmak.</p>
-    <h3>Özellikler</h3>
-    <ul>
-      <li>MSMG Toolkit ile bileşen temizleme ve özelleştirme</li>
-      <li>Sysprep + CopyProfile ile kullanıcı profili aktarımı</li>
-      <li>Explorer Patcher entegrasyonu</li>
-      <li>Registry tweak’leri ile performans ve gizlilik</li>
-      <li>Güncellemelerle uyumlu minimal sistem</li>
-    </ul>
     `;
-
     const readmeEN = `
     <h2>🇬🇧 English Description</h2>
     <p>This project provides <b>custom Windows ISOs</b> created with <b>MSMG Toolkit</b>.<br>
     Goal: Build streamlined, optimized, and secure Windows environments.</p>
-    <h3>Features</h3>
-    <ul>
-      <li>MSMG Toolkit for component removal and customization</li>
-      <li>Sysprep + CopyProfile for profile transfer</li>
-      <li>Explorer Patcher integration</li>
-      <li>Registry tweaks for performance & privacy</li>
-      <li>Tested minimal system, compatible with updates</li>
-    </ul>
     `;
-
     function setLang(lang) {
       if(lang === 'tr') {
         document.getElementById('desc').innerText = 'MSMG Toolkit ile hazırlanmış, Windows 10 & 11 için optimize edilmiş özel ISO\'lar.';
@@ -149,8 +155,6 @@
         document.getElementById('readme').innerHTML = readmeEN;
       }
     }
-
-    // Varsayılan dil: English
     setLang('en');
   </script>
 </body>
