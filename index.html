@@ -5,21 +5,26 @@
   <title>Lithium – Custom Windows ISOs</title>
   <meta name="description" content="Lithium: Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 & 11.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Lüks font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #141E30, #243B55);
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
-      line-height: 1.6;
+      line-height: 1.8;
     }
     header {
       text-align: center;
       padding: 60px 20px 20px;
       position: relative;
     }
-    h1 { font-size: 3em; margin-bottom: 10px; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
     p { font-size: 1.2em; margin-bottom: 30px; }
     a.button {
       padding: 14px 28px;
@@ -48,12 +53,11 @@
     .lang-switch button:hover { opacity: 0.8; }
     main {
       max-width: 900px;
-      margin: auto;
-      background: rgba(0,0,0,0.4);
-      padding: 30px;
-      border-radius: 10px;
+      margin: 40px auto;
+      padding: 20px;
+      /* Arkası boş → kutu yok */
     }
-    h2 { margin-top: 30px; }
+    h2 { margin-top: 30px; font-family: 'Playfair Display', serif; }
     footer {
       text-align: center;
       padding: 20px;
@@ -85,45 +89,29 @@
     const readmeTR = `
     <h2>🇹🇷 Türkçe Açıklama</h2>
     <p>Bu proje, <b>MSMG Toolkit</b> kullanılarak özelleştirilmiş Windows ISO’ların hazırlanmasını içerir.<br>
-    Amaç: Daha sade, optimize edilmiş ve güvenli Windows ortamları oluşturmak. Hem Windows 10 hem de Windows 11 sürümleri için ISO’lar hazırlanır.</p>
+    Amaç: Daha sade, optimize edilmiş ve güvenli Windows ortamları oluşturmak.</p>
     <h3>Özellikler</h3>
     <ul>
       <li>MSMG Toolkit ile bileşen temizleme ve özelleştirme</li>
       <li>Sysprep + CopyProfile ile kullanıcı profili aktarımı</li>
-      <li>Explorer Patcher entegrasyonu (klasik Başlat menüsü ve görev çubuğu düzenlemeleri)</li>
-      <li>Registry tweak’leri ile performans ve gizlilik ayarları</li>
-      <li>Güncellemelerle uyumlu, test edilmiş minimal sistem</li>
-      <li>Hem Windows 10 hem de Windows 11 sürümleri için optimize edildi</li>
+      <li>Explorer Patcher entegrasyonu</li>
+      <li>Registry tweak’leri ile performans ve gizlilik</li>
+      <li>Güncellemelerle uyumlu minimal sistem</li>
     </ul>
-    <h3>Kurulum</h3>
-    <ol>
-      <li>ISO dosyasını indirin (Releases bölümünde veya README’de verilen linklerden).</li>
-      <li>ISO’yu USB’ye yazdırın (Rufus veya benzeri araçlarla).</li>
-      <li>Kurulum sırasında standart Windows adımları izlenir.</li>
-      <li>İlk oturum açmada Explorer Patcher ve registry tweak’leri otomatik uygulanır.</li>
-    </ol>
     `;
 
     const readmeEN = `
     <h2>🇬🇧 English Description</h2>
     <p>This project provides <b>custom Windows ISOs</b> created with <b>MSMG Toolkit</b>.<br>
-    Goal: Build streamlined, optimized, and secure Windows environments. ISOs are prepared for both Windows 10 and Windows 11.</p>
+    Goal: Build streamlined, optimized, and secure Windows environments.</p>
     <h3>Features</h3>
     <ul>
       <li>MSMG Toolkit for component removal and customization</li>
       <li>Sysprep + CopyProfile for profile transfer</li>
-      <li>Explorer Patcher integration (classic Start menu and taskbar tweaks)</li>
-      <li>Registry tweaks for performance and privacy</li>
+      <li>Explorer Patcher integration</li>
+      <li>Registry tweaks for performance & privacy</li>
       <li>Tested minimal system, compatible with updates</li>
-      <li>Optimized for both Windows 10 and Windows 11</li>
     </ul>
-    <h3>Installation</h3>
-    <ol>
-      <li>Download the ISO (from Releases or provided links).</li>
-      <li>Write ISO to USB (using Rufus or similar tools).</li>
-      <li>Follow standard Windows installation steps.</li>
-      <li>On first login, Explorer Patcher and registry tweaks are applied automatically.</li>
-    </ol>
     `;
 
     function setLang(lang) {
