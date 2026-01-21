@@ -192,11 +192,22 @@
     </ul>
     `;
 
-    function setLang(lang) {
+      function setLang(lang) {
       if (lang === 'tr') {
         document.getElementById('desc').innerText = 'MSMG Toolkit ile optimize edilmiş Windows 10 21H2 ISO’lar.';
         document.getElementById('download').innerText = '📥 ISO İndir';
         document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Güvenli Sistemler';
         document.getElementById('readme').innerHTML = readmeTR;
       } else {
-        document.getElementById('desc').innerText = 'Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 21
+        document.getElementById('desc').innerText = 'Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 21H2.';
+        document.getElementById('download').innerText = '📥 Download ISO';
+        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Secure Builds';
+        document.getElementById('readme').innerHTML = readmeEN;
+      }
+    }
+
+    // Varsayılan olarak İngilizce açılır
+    setLang('en');
+  </script>
+</body>
+</html>
