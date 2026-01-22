@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Lithium Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto Condensed', sans-serif;
@@ -14,7 +14,6 @@
       line-height:1.9;
       transition: background 0.4s ease, color 0.4s ease;
     }
-    /* Light Mode */
     body.light {
       background:#f5f5f5;
       color:#222;
@@ -22,38 +21,41 @@
     header {
       background:#800000;
       color:white;
-      padding:4px 0;
+      padding:6px 0;
       text-align:center;
       font-family:'Montserrat', sans-serif;
-      font-weight:200;
-      letter-spacing:1px;
+      font-weight:400;
     }
     header h1 {
-      font-size:18px;
-      margin:4px 0;
-      font-weight:200;
+      font-size:22px;
+      margin:6px 0;
+      font-weight:600;
+      letter-spacing:3px;
     }
     nav {
-      line-height:1.2;
+      line-height:1.4;
     }
     nav a {
-      margin:0 20px;
+      margin:0 25px;
       color:white;
       text-decoration:none;
-      font-size:14px;
-      font-weight:200;
+      font-size:16px;
+      font-weight:400;
       transition:color 0.3s ease;
     }
     nav a:hover { color:#ffcccc; }
+
     .hero { text-align:center; padding:80px 20px; animation: fadeIn 2s ease-in; }
     .hero h1 { font-family:'Montserrat', sans-serif; font-size:52px; font-weight:300; letter-spacing:2px; }
     .download { margin-top:40px; }
     .download a img { height:80px; transition: transform 0.3s ease; }
     .download a img:hover { transform: scale(1.1) rotate(-2deg); }
     .download p { margin-top:15px; font-size:16px; }
+
     section { padding:50px; max-width:1200px; margin:50px auto; }
     h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:25px; font-weight:400; letter-spacing:1px; font-size:32px; }
     ul { line-height:2.2; font-size:20px; }
+
     .card {
       background:#1e1e1e;
       border:1px solid #800000;
@@ -71,11 +73,13 @@
       box-shadow:0 4px 12px rgba(0,0,0,0.2);
     }
     .card:hover { transform: scale(1.03); }
+
     @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
     @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+
     footer { background:#800000; color:white; text-align:center; padding:20px; margin-top:50px; font-size:15px; }
     .signature { margin-top:12px; font-size:13px; color:#ccc; letter-spacing:1px; }
-    /* Dil ve Tema Butonları */
+
     .controls { text-align:center; margin-top:20px; }
     .controls button {
       margin:0 8px;
@@ -91,7 +95,7 @@
 </head>
 <body>
   <header>
-    <h1>Lithium Project</h1>
+    <h1>LITHIUM PROJECT</h1>
     <nav>
       <a href="#amac">Projenin Amacı</a>
       <a href="#senaryolar">Kullanım Senaryoları</a>
@@ -146,7 +150,7 @@
         <h3>En Düşük</h3>
         <ul>
           <li>RAM: 512 MB</li>
-          <li>Disk: 15 GB</li>
+                    <li>Disk: 15 GB</li>
           <li>İşlemci: 1 çekirdek</li>
         </ul>
       </div>
@@ -173,4 +177,38 @@
 
   <footer>
     <p id="licenseText">📜 Tüm hakları saklıdır. Bu proje yalnızca resmi sürüm olarak kullanılabilir.</p>
-    <div class="signature">LITHIUM PROJECT BY RHODIUM</
+    <div class="signature">LITHIUM PROJECT BY RHODIUM</div>
+  </footer>
+
+  <script>
+    const texts = {
+      tr: {
+        heroTitle: "Minimal, Güvenli ve Performans Odaklı",
+        heroDesc: "Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.",
+        downloadDesc: "Optimize edilmiş Windows deneyimi için Lithium’u indir.",
+        nedenText: "Lithium, modern Windows sistemlerinde gereksiz yükleri ortadan kaldırarak kullanıcıya daha hızlı, güvenli ve sürdürülebilir bir deneyim sunmayı amaçlar.",
+        licenseText: "📜 Tüm hakları saklıdır. Bu proje yalnızca resmi sürüm olarak kullanılabilir."
+      },
+      en: {
+        heroTitle: "Minimal, Secure and Performance-Oriented",
+        heroDesc: "Lithium is a minimal Windows optimization project focused on security and performance.",
+        downloadDesc: "Download Lithium for an optimized Windows experience.",
+        nedenText: "Lithium aims to provide a faster, secure, and sustainable experience by removing unnecessary loads from modern Windows systems.",
+        licenseText: "📜 All rights reserved. This project can only be used as the official release."
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("heroTitle").innerText = texts[lang].heroTitle;
+      document.getElementById("heroDesc").innerText = texts[lang].heroDesc;
+      document.getElementById("downloadDesc").innerText = texts[lang].downloadDesc;
+      document.getElementById("nedenText").innerText = texts[lang].nedenText;
+      document.getElementById("licenseText").innerText = texts[lang].licenseText;
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+    }
+  </script>
+</body>
+</html>
