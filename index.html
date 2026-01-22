@@ -1,213 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lithium – Custom Windows ISOs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Lithium Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #000; /* Tam siyah arka plan */
-      color: #f5f5f5;
-      line-height: 1.8;
+    body { font-family: 'Roboto', sans-serif; margin:0; background:#f9f9f9; color:#333; }
+    header { background:#800000; color:white; padding:20px; text-align:center; font-family:'Montserrat', sans-serif; }
+    nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold; }
+    .hero { text-align:center; padding:60px 20px; }
+    .hero h1 { font-family:'Montserrat', sans-serif; font-size:42px; color:#800000; }
+    .download { margin-top:30px; }
+    .download a img { height:60px; }
+    .download p { margin-top:10px; font-size:14px; color:#555; }
+    section { padding:40px 20px; max-width:900px; margin:auto; }
+    h2 { font-family:'Montserrat', sans-serif; color:#800000; margin-bottom:20px; }
+    ul { line-height:1.8; }
+    /* Responsive */
+    @media (max-width:768px) {
+      .hero h1 { font-size:28px; }
+      .download a img { height:50px; }
     }
-    nav {
-      background: #800020; /* Bordo */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      flex-wrap: wrap;
-    }
-    nav h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2em;
-      color: #f5f5f5;
-      margin: 0;
-      letter-spacing: 1px;
-    }
-    .lang-switch {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .lang-switch button {
-      padding: 6px 14px;
-      min-width: 90px;
-      border: 1px solid #f5f5f5;
-      background: transparent;
-      color: #f5f5f5;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95em;
-      font-family: 'Roboto', sans-serif;
-    }
-    .lang-switch button:hover {
-      background: #f5f5f5;
-      color: #800020;
-    }
-    header {
-      text-align: center;
-      padding: 140px 20px 40px;
-    }
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2em;
-      color: #800020;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 900px;
-      margin: 20px auto;
-    }
-    a.button {
-      padding: 14px 28px;
-      background: transparent;
-      border: 2px solid #800020;
-      color: #800020;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: transform 0.2s, background 0.3s, color 0.3s;
-      display: inline-block;
-    }
-    a.button:hover {
-      background: #800020;
-      color: #000;
-      transform: scale(1.05);
-    }
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9em;
-      opacity: 0.7;
-      border-top: 1px solid #333;
-    }
-    @media (max-width: 768px) {
-      nav { flex-direction: column; align-items: flex-start; }
-      .lang-switch { margin-top: 10px; }
-      header { padding: 100px 20px 40px; }
-      h2 { font-size: 1.6em; }
-      p { font-size: 1em; }
-    }
+    /* Dil butonları */
+    .lang-switch { margin-top:20px; }
+    .lang-switch button { margin:0 5px; padding:8px 12px; border:none; background:#800000; color:white; cursor:pointer; border-radius:4px; }
+    /* Footer */
+    footer { background:#800000; color:white; text-align:center; padding:20px; margin-top:40px; font-size:14px; }
   </style>
 </head>
 <body>
-  <nav>
-    <h1>Lithium</h1>
-    <div class="lang-switch">
-      <button onclick="setLang('en')">English</button>
-      <button onclick="setLang('tr')">Türkçe</button>
-    </div>
-  </nav>
-
   <header>
-    <h2 id="title">⚡ Custom Windows ISOs</h2>
-    <p id="desc">MSMG Toolkit ile optimize edilmiş Windows 10 21H2 ISO’lar.</p>
-    <a href="https://mega.nz/file/9vwVjbKL#pT_6kLL00EjCrP06Q2oBOK0tHSv9ma1IpM9Urjnr-z0" class="button" id="download">📥 Download ISO</a>
+    <h1>Lithium Project</h1>
+    <nav>
+      <a href="#neden">Neden Lithium</a>
+      <a href="#gereksinimler">Sistem Gereksinimleri</a>
+      <a href="#neler">Neler Yapıldı</a>
+      <a href="#download">İndir</a>
+      <a href="#license">Lisans</a>
+    </nav>
   </header>
 
-  <main id="readme"></main>
+  <div class="hero">
+    <h1 id="heroTitle">Minimal, Güvenli ve Performans Odaklı</h1>
+    <p id="heroDesc">Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.</p>
+    <div class="download" id="download">
+      <a href="https://senin-linkin.com/Lithium.zip">
+        <img src="https://img.shields.io/badge/⬇️%20Download-Lithium-bordo?style=for-the-badge&logo=windows" alt="Download Lithium"/>
+      </a>
+      <p id="downloadDesc">Optimize edilmiş Windows deneyimi için Lithium’u indir.</p>
+    </div>
+    <div class="lang-switch">
+      <button onclick="setLang('tr')">Türkçe</button>
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('az')">Azərbaycanca</button>
+    </div>
+  </div>
 
-  <footer id="footer">© 2026 Lithium by Rhodium – Minimal & Secure Builds</footer>
+  <section id="neden">
+    <h2>Neden Lithium</h2>
+    <p id="nedenText">Gereksiz bileşenlerden arındırılmış, güvenli ve hızlı bir Windows ortamı sunar. Minimalizm ve sürdürülebilirlik felsefesiyle tasarlanmıştır.</p>
+  </section>
+
+  <section id="gereksinimler">
+    <h2>Sistem Gereksinimleri</h2>
+    <ul>
+      <li>Windows 10/11 uyumlu sistem</li>
+      <li>En az 4 GB RAM</li>
+      <li>20 GB boş disk alanı</li>
+      <li>Sanal makine (test için önerilir)</li>
+    </ul>
+  </section>
+
+  <section id="neler">
+    <h2>Neler Yapıldı</h2>
+    <ul>
+      <li>Registry optimizasyonları</li>
+      <li>Performans testleri</li>
+      <li>Gereksiz servislerin kaldırılması</li>
+      <li>Çok dilli dokümantasyon</li>
+    </ul>
+  </section>
+
+  <footer id="license">
+    <p id="licenseText">📜 Bu proje MIT Lisansı ile lisanslanmıştır. Lithium’u kullanabilir, değiştirebilir ve dağıtabilirsiniz; tek şart uygun atıf yapmaktır.</p>
+  </footer>
 
   <script>
-    const readmeTR = `
-    <h2>🇹🇷 Türkçe Açıklama – Lithium Projesi</h2>
-    <p>Lithium, Windows 10 21H2 tabanlı özelleştirilmiş ISO’lar üretmek için geliştirilmiş bir projedir. Amaç: sade, optimize edilmiş ve güvenli bir Windows ortamı oluşturmak.</p>
-    <h3>🔧 Kullanılan Araçlar</h3>
-    <ul>
-      <li>MSMG Toolkit → Windows bileşenlerini kaldırma ve özelleştirme</li>
-      <li>Sysprep + CopyProfile → Kullanıcı profili aktarımı</li>
-      <li>Explorer Patcher → Arayüz düzenlemeleri</li>
-      <li>Registry Tweak’leri → Performans ve gizlilik</li>
-      <li>SetupComplete.cmd → Kurulum sonrası otomasyon</li>
-    </ul>
-    <h3>🧱 ISO Yapısı</h3>
-    <ul>
-      <li>Taban: Windows 10 21H2</li>
-      <li>Gereksiz bileşenler kaldırıldı</li>
-      <li>Firefox, OpenOffice ve 7-Zip hazır gelir</li>
-      <li>Sağ tık menüsü özelleştirildi</li>
-      <li>Registry tweak’leri kalıcı ve uyumlu</li>
-    </ul>
-    <h3>📦 Kurulum Adımları</h3>
-    <ol>
-      <li>ISO dosyasını indirin.</li>
-      <li>Rufus ile USB’ye yazdırın.</li>
-      <li>Kurulumu başlatın.</li>
-      <li>İlk oturumda tüm ayarlar otomatik uygulanır.</li>
-    </ol>
-    <h3>🧪 Test Süreci</h3>
-    <ul>
-      <li>VMware ve VirtualBox üzerinde test edildi.</li>
-      <li>Windows Update uyumluluğu kontrol edildi.</li>
-      <li>Registry değişiklikleri belgelenmiş ve geri alınabilir.</li>
-    </ul>
-    `;
-
-    const readmeEN = `
-    <h2>🇬🇧 English Description – Lithium Project</h2>
-    <p>Lithium provides custom Windows ISOs based on Windows 10 21H2. The goal is to build streamlined, optimized, and secure environments.</p>
-    <h3>🔧 Tools Used</h3>
-    <ul>
-      <li>MSMG Toolkit → Component removal and customization</li>
-      <li>Sysprep + CopyProfile → Profile transfer</li>
-      <li>Explorer Patcher → UI tweaks</li>
-      <li>Registry Tweaks → Performance and privacy</li>
-      <li>SetupComplete.cmd → Post-install automation</li>
-    </ul>
-    <h3>🧱 ISO Structure</h3>
-    <ul>
-      <li>Base: Windows 10 21H2</li>
-      <li>Removed unnecessary components</li>
-      <li>Firefox, OpenOffice, and 7-Zip included</li>
-      <li>Context menu customized</li>
-      <li>Registry tweaks persistent and update-safe</li>
-    </ul>
-    <h3>📦 Installation Steps</h3>
-    <ol>
-      <li>Download ISO.</li>
-      <li>Write ISO to USB with Rufus.</li>
-      <li>Start setup.</li>
-      <li>On first login, tweaks and programs apply automatically.</li>
-    </ol>
-    <h3>🧪 Testing Process</h3>
-    <ul>
-      <li>Tested in VMware and VirtualBox.</li>
-      <li>Windows Update compatibility verified.</li>
-      <li>Registry changes documented and reversible.</li>
-    </ul>
-    `;
-
-      function setLang(lang) {
-      if (lang === 'tr') {
-        document.getElementById('desc').innerText = 'MSMG Toolkit ile optimize edilmiş Windows 10 21H2 ISO’lar.';
-        document.getElementById('download').innerText = '📥 ISO İndir';
-        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Güvenli Sistemler';
-        document.getElementById('readme').innerHTML = readmeTR;
-      } else {
-        document.getElementById('desc').innerText = 'Custom Windows ISOs built with MSMG Toolkit, optimized for Windows 10 21H2.';
-        document.getElementById('download').innerText = '📥 Download ISO';
-        document.getElementById('footer').innerText = '© 2026 Rhodium358 – Minimal & Secure Builds';
-        document.getElementById('readme').innerHTML = readmeEN;
+    const texts = {
+      tr: {
+        heroTitle: "Minimal, Güvenli ve Performans Odaklı",
+        heroDesc: "Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.",
+        neden: "Gereksiz bileşenlerden arındırılmış, güvenli ve hızlı bir Windows ortamı sunar.",
+        downloadDesc: "Optimize edilmiş Windows deneyimi için Lithium’u indir.",
+        license: "📜 Bu proje MIT Lisansı ile lisanslanmıştır. Lithium’u kullanabilir, değiştirebilir ve dağıtabilirsiniz; tek şart uygun atıf yapmaktır."
+      },
+      en: {
+        heroTitle: "Minimal, Secure and Performance-Oriented",
+        heroDesc: "Lithium is a minimal Windows optimization project focused on security and performance.",
+        neden: "Provides a secure and fast Windows environment stripped of unnecessary components.",
+        downloadDesc: "Download Lithium for an optimized Windows experience.",
+        license: "📜 This project is licensed under the MIT License. You may use, modify, and distribute Lithium with proper attribution."
+      },
+      az: {
+        heroTitle: "Minimal, Təhlükəsiz və Performans Yönümlü",
+        heroDesc: "Lithium təhlükəsizlik və performans yönümlü minimal Windows optimizasiya layihəsidir.",
+        neden: "Artıq komponentlərdən təmizlənmiş, təhlükəsiz və sürətli Windows mühiti təqdim edir.",
+        downloadDesc: "Optimallaşdırılmış Windows təcrübəsi üçün Lithium-u yüklə.",
+        license: "📜 Bu layihə MIT Lisenziyası ilə lisenziyalaşdırılıb. Lithium-u istifadə edə, dəyişdirə və yaymaq olar; şərt düzgün istinad etməkdir."
       }
-    }
+    };
 
-    // Varsayılan olarak İngilizce açılır
-    setLang('en');
+    function setLang(lang) {
+      document.getElementById("heroTitle").innerText = texts[lang].heroTitle;
+      document.getElementById("heroDesc").innerText = texts[lang].heroDesc;
+      document.getElementById("nedenText").innerText = texts[lang].neden;
+      document.getElementById("downloadDesc").innerText = texts[lang].downloadDesc;
+      document.getElementById("licenseText").innerText = texts[lang].license;
+    }
   </script>
 </body>
 </html>
