@@ -13,8 +13,6 @@
     nav a:hover { color:#ffcccc; }
     .hero { text-align:center; padding:100px 20px; animation: fadeIn 2s ease-in; }
     .hero h1 { font-family:'Montserrat', sans-serif; font-size:56px; color:#e0e0e0; font-weight:300; letter-spacing:2px; }
-    .download a img { height:80px; transition: transform 0.3s ease; }
-    .download a img:hover { transform: scale(1.1) rotate(-2deg); }
     section { padding:40px; max-width:1100px; margin:40px auto; }
     h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:25px; font-weight:400; letter-spacing:1px; font-size:28px; }
     ul { line-height:2; font-size:18px; }
@@ -27,45 +25,9 @@
       margin-bottom:40px;
       box-shadow:0 6px 16px rgba(0,0,0,0.7);
       animation: fadeInUp 1.5s ease;
-      position:relative;
       transition: transform 0.3s ease;
     }
     .card:hover { transform: scale(1.03); }
-    /* Önerilen etiketi */
-    .card.recommended::after {
-      content:"ÖNERİLEN";
-      position:absolute;
-      top:10px; right:10px;
-      background:#800000;
-      color:white;
-      padding:6px 12px;
-      border-radius:6px;
-      font-size:14px;
-      opacity:0;
-      transform:translateY(-10px);
-      transition:opacity 0.4s ease, transform 0.4s ease;
-    }
-    .card.recommended:hover::after {
-      opacity:1;
-      transform:translateY(0);
-    }
-    /* Sistem Gereksinimleri özel kutular */
-    .requirements { display:flex; flex-wrap:wrap; gap:30px; }
-    .req-box {
-      flex:1;
-      min-width:280px;
-      background:#2a2a2a;
-      border:1px solid #800000;
-      border-radius:10px;
-      padding:30px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.6);
-      animation: fadeInUp 2s ease;
-      position:relative;
-      transition: transform 0.3s ease;
-    }
-    .req-box:hover { transform: scale(1.05); }
-    .req-box h3 { color:#ffcccc; font-family:'Montserrat', sans-serif; font-weight:400; margin-bottom:20px; letter-spacing:1px; font-size:22px; }
-    .req-box ul { list-style:none; padding:0; font-size:16px; line-height:2; }
     /* Animasyonlar */
     @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
     @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
@@ -78,19 +40,55 @@
   <header>
     <h1>Lithium Project</h1>
     <nav>
-      <a href="#neden">Neden Lithium</a>
+      <a href="#amac">Projenin Amacı</a>
+      <a href="#senaryolar">Kullanım Senaryoları</a>
+      <a href="#katki">Topluluk ve Katkı</a>
       <a href="#gereksinimler">Sistem Gereksinimleri</a>
-      <a href="#neler">Neler Yapıldı</a>
-      <a href="#download">İndir</a>
-      <a href="#license">Lisans</a>
       <a href="#iletisim">İletişim</a>
     </nav>
   </header>
 
   <div class="hero">
-    <h1 id="heroTitle">Minimal, Güvenli ve Performans Odaklı</h1>
-    <p id="heroDesc">Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.</p>
+    <h1>Minimal, Güvenli ve Performans Odaklı</h1>
+    <p>Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.</p>
   </div>
+
+  <section id="amac" class="card">
+    <h2>Projenin Amacı</h2>
+    <p>
+      Lithium, modern Windows sistemlerinde gereksiz yükleri ortadan kaldırarak kullanıcıya daha hızlı,
+      güvenli ve sürdürülebilir bir deneyim sunmayı amaçlar. Bu proje yalnızca performans artışı değil,
+      aynı zamanda metodolojik bir yaklaşım ve uzun vadeli istikrar sağlar.
+    </p>
+    <p>
+      Amacımız, kullanıcıların bilgisayarlarını daha verimli kullanabilmesi, düşük donanımlarda bile
+      akıcı bir deneyim yaşayabilmesi ve gereksiz servislerden arındırılmış bir Windows ortamına sahip
+      olmasıdır.
+    </p>
+  </section>
+
+  <section id="senaryolar" class="card">
+    <h2>Kullanım Senaryoları</h2>
+    <ul>
+      <li><strong>Ev kullanıcıları:</strong> Daha hızlı açılış, daha az arka plan servis.</li>
+      <li><strong>Oyun severler:</strong> FPS artışı, düşük gecikme.</li>
+      <li><strong>Kurumsal ortamlar:</strong> Güvenlik odaklı minimal yapı.</li>
+      <li><strong>Eski donanımlar:</strong> 512 MB RAM gibi düşük sistemlerde bile kullanılabilir.</li>
+    </ul>
+  </section>
+
+  <section id="katki" class="card">
+    <h2>Topluluk ve Katkı</h2>
+    <p>
+      Lithium, kapalı kaynak bir projedir. Kullanıcılar deneyimlerini paylaşabilir, geri bildirim
+      verebilir ancak kod üzerinde değişiklik yapamaz. Bu sayede projenin bütünlüğü korunur ve
+      tek bir resmi sürüm üzerinden ilerlenir.
+    </p>
+    <p>
+      Katkı, öneri ve geri bildirimler topluluk tarafından alınır; ancak geliştirme süreci yalnızca
+      resmi ekip tarafından yürütülür.
+    </p>
+  </section>
 
   <section id="gereksinimler" class="card">
     <h2>Sistem Gereksinimleri</h2>
@@ -103,7 +101,7 @@
           <li>İşlemci: 1 çekirdek</li>
         </ul>
       </div>
-      <div class="req-box recommended">
+      <div class="req-box">
         <h3>Önerilen</h3>
         <ul>
           <li>RAM: 4 GB</li>
@@ -114,8 +112,18 @@
     </div>
   </section>
 
+  <section id="iletisim" class="card">
+    <h2>İletişim</h2>
+    <ul>
+      <li>Instagram: Yakında</li>
+      <li>TikTok: Yakında</li>
+      <li>YouTube: Yakında</li>
+      <li>Discord: Yakında</li>
+    </ul>
+  </section>
+
   <footer>
-    <p id="licenseText">📜 Bu proje MIT Lisansı ile lisanslanmıştır.</p>
+    <p>📜 Tüm hakları saklıdır. Bu proje yalnızca resmi sürüm olarak kullanılabilir.</p>
     <div class="signature">LITHIUM PROJECT BY RHODIUM</div>
   </footer>
 </body>
