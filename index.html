@@ -7,17 +7,16 @@
   <!-- İnce ve geniş fontlar -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Roboto Condensed', sans-serif; margin:0; background:#121212; color:#e0e0e0; line-height:1.8; }
-    header { background:#800000; color:white; padding:25px; text-align:center; font-family:'Montserrat', sans-serif; font-weight:600; letter-spacing:1px; }
-    nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold; }
+    body { font-family: 'Roboto Condensed', sans-serif; margin:0; background:#121212; color:#e0e0e0; line-height:1.9; }
+    header { background:#800000; color:white; padding:15px; text-align:center; font-family:'Montserrat', sans-serif; font-weight:600; letter-spacing:1px; }
+    nav a { margin:0 20px; color:white; text-decoration:none; font-size:18px; font-weight:bold; transition:color 0.3s ease; }
+    nav a:hover { color:#ffcccc; }
     .hero { text-align:center; padding:100px 20px; animation: fadeIn 2s ease-in; }
-    .hero h1 { font-family:'Montserrat', sans-serif; font-size:52px; color:#e0e0e0; font-weight:300; letter-spacing:2px; }
-    .download { margin-top:40px; }
+    .hero h1 { font-family:'Montserrat', sans-serif; font-size:56px; color:#e0e0e0; font-weight:300; letter-spacing:2px; }
     .download a img { height:80px; transition: transform 0.3s ease; }
-    .download a img:hover { transform: scale(1.1); }
-    .download p { margin-top:15px; font-size:18px; color:#bbb; }
+    .download a img:hover { transform: scale(1.1) rotate(-2deg); }
     section { padding:40px; max-width:1100px; margin:40px auto; }
-    h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:25px; font-weight:400; letter-spacing:1px; }
+    h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:25px; font-weight:400; letter-spacing:1px; font-size:28px; }
     ul { line-height:2; font-size:18px; }
     /* Kart/Kutu Tasarımı */
     .card {
@@ -28,8 +27,28 @@
       margin-bottom:40px;
       box-shadow:0 6px 16px rgba(0,0,0,0.7);
       animation: fadeInUp 1.5s ease;
+      position:relative;
+      transition: transform 0.3s ease;
     }
-    .card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+    .card:hover { transform: scale(1.03); }
+    /* Önerilen etiketi */
+    .card.recommended::after {
+      content:"ÖNERİLEN";
+      position:absolute;
+      top:10px; right:10px;
+      background:#800000;
+      color:white;
+      padding:6px 12px;
+      border-radius:6px;
+      font-size:14px;
+      opacity:0;
+      transform:translateY(-10px);
+      transition:opacity 0.4s ease, transform 0.4s ease;
+    }
+    .card.recommended:hover::after {
+      opacity:1;
+      transform:translateY(0);
+    }
     /* Sistem Gereksinimleri özel kutular */
     .requirements { display:flex; flex-wrap:wrap; gap:30px; }
     .req-box {
@@ -41,21 +60,15 @@
       padding:30px;
       box-shadow:0 4px 12px rgba(0,0,0,0.6);
       animation: fadeInUp 2s ease;
+      position:relative;
+      transition: transform 0.3s ease;
     }
-    .req-box h3 { color:#ffcccc; font-family:'Montserrat', sans-serif; font-weight:400; margin-bottom:20px; letter-spacing:1px; }
+    .req-box:hover { transform: scale(1.05); }
+    .req-box h3 { color:#ffcccc; font-family:'Montserrat', sans-serif; font-weight:400; margin-bottom:20px; letter-spacing:1px; font-size:22px; }
     .req-box ul { list-style:none; padding:0; font-size:16px; line-height:2; }
-    .req-box li { margin-bottom:12px; }
     /* Animasyonlar */
     @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
     @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
-    /* Responsive */
-    @media (max-width:768px) {
-      .hero h1 { font-size:36px; }
-      .download a img { height:60px; }
-    }
-    /* Dil butonları */
-    .lang-switch { margin-top:30px; }
-    .lang-switch button { margin:0 8px; padding:10px 16px; border:none; background:#800000; color:white; cursor:pointer; border-radius:6px; font-size:14px; }
     /* Footer */
     footer { background:#800000; color:white; text-align:center; padding:25px; margin-top:50px; font-size:15px; }
     .signature { margin-top:12px; font-size:13px; color:#ccc; letter-spacing:1px; }
@@ -77,23 +90,7 @@
   <div class="hero">
     <h1 id="heroTitle">Minimal, Güvenli ve Performans Odaklı</h1>
     <p id="heroDesc">Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.</p>
-    <div class="download" id="download">
-      <a href="https://senin-linkin.com/Lithium.zip">
-        <img src="https://img.shields.io/badge/⬇️%20Download-Lithium-bordo?style=for-the-badge&logo=windows" alt="Download Lithium"/>
-      </a>
-      <p id="downloadDesc">Optimize edilmiş Windows deneyimi için Lithium’u indir.</p>
-    </div>
-    <div class="lang-switch">
-      <button onclick="setLang('tr')">Türkçe</button>
-      <button onclick="setLang('en')">English</button>
-      <button onclick="setLang('az')">Azərbaycanca</button>
-    </div>
   </div>
-
-  <section id="neden" class="card">
-    <h2>Neden Lithium</h2>
-    <p id="nedenText">Gereksiz bileşenlerden arındırılmış, güvenli ve hızlı bir Windows ortamı sunar. Minimalizm ve sürdürülebilirlik felsefesiyle tasarlanmıştır.</p>
-  </section>
 
   <section id="gereksinimler" class="card">
     <h2>Sistem Gereksinimleri</h2>
@@ -106,7 +103,7 @@
           <li>İşlemci: 1 çekirdek</li>
         </ul>
       </div>
-      <div class="req-box">
+      <div class="req-box recommended">
         <h3>Önerilen</h3>
         <ul>
           <li>RAM: 4 GB</li>
@@ -117,63 +114,9 @@
     </div>
   </section>
 
-  <section id="neler" class="card">
-    <h2>Neler Yapıldı</h2>
-    <ul>
-      <li>Registry optimizasyonları</li>
-      <li>Performans testleri</li>
-      <li>Gereksiz servislerin kaldırılması</li>
-      <li>Çok dilli dokümantasyon</li>
-    </ul>
-  </section>
-
-  <section id="iletisim" class="card">
-    <h2>İletişim</h2>
-    <ul>
-      <li>Instagram: Yakında</li>
-      <li>TikTok: Yakında</li>
-      <li>YouTube: Yakında</li>
-      <li>Discord: Yakında</li>
-    </ul>
-  </section>
-
-  <footer id="license">
-    <p id="licenseText">📜 Bu proje MIT Lisansı ile lisanslanmıştır. Lithium’u kullanabilir, değiştirebilir ve dağıtabilirsiniz; tek şart uygun atıf yapmaktır.</p>
+  <footer>
+    <p id="licenseText">📜 Bu proje MIT Lisansı ile lisanslanmıştır.</p>
     <div class="signature">LITHIUM PROJECT BY RHODIUM</div>
   </footer>
-
-    <script>
-    const texts = {
-      tr: {
-        heroTitle: "Minimal, Güvenli ve Performans Odaklı",
-        heroDesc: "Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.",
-        neden: "Gereksiz bileşenlerden arındırılmış, güvenli ve hızlı bir Windows ortamı sunar.",
-        downloadDesc: "Optimize edilmiş Windows deneyimi için Lithium’u indir.",
-        license: "📜 Bu proje MIT Lisansı ile lisanslanmıştır. Lithium’u kullanabilir, değiştirebilir ve dağıtabilirsiniz; tek şart uygun atıf yapmaktır."
-      },
-      en: {
-        heroTitle: "Minimal, Secure and Performance-Oriented",
-        heroDesc: "Lithium is a minimal Windows optimization project focused on security and performance.",
-        neden: "Provides a secure and fast Windows environment stripped of unnecessary components.",
-        downloadDesc: "Download Lithium for an optimized Windows experience.",
-        license: "📜 This project is licensed under the MIT License. You may use, modify, and distribute Lithium with proper attribution."
-      },
-      az: {
-        heroTitle: "Minimal, Təhlükəsiz və Performans Yönümlü",
-        heroDesc: "Lithium təhlükəsizlik və performans yönümlü minimal Windows optimizasiya layihəsidir.",
-        neden: "Artıq komponentlərdən təmizlənmiş, təhlükəsiz və sürətli Windows mühiti təqdim edir.",
-        downloadDesc: "Optimallaşdırılmış Windows təcrübəsi üçün Lithium-u yüklə.",
-        license: "📜 Bu layihə MIT Lisenziyası ilə lisenziyalaşdırılıb. Lithium-u istifadə edə, dəyişdirə və yaymaq olar; şərt düzgün istinad etməkdir."
-      }
-    };
-
-    function setLang(lang) {
-      document.getElementById("heroTitle").innerText = texts[lang].heroTitle;
-      document.getElementById("heroDesc").innerText = texts[lang].heroDesc;
-      document.getElementById("nedenText").innerText = texts[lang].neden;
-      document.getElementById("downloadDesc").innerText = texts[lang].downloadDesc;
-      document.getElementById("licenseText").innerText = texts[lang].license;
-    }
-  </script>
 </body>
 </html>
