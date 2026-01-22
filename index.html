@@ -8,9 +8,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Roboto Condensed', sans-serif; margin:0; background:#121212; color:#e0e0e0; line-height:1.9; }
-    header { background:#800000; color:white; padding:5px; text-align:center; font-family:'Montserrat', sans-serif; font-weight:600; letter-spacing:1px; }
-    nav a { margin:0 10px; color:white; text-decoration:none; font-size:18px; font-weight:bold; transition:color 0.3s ease; }
+    /* Üst bar inceltilmiş */
+    header {
+      background:#800000;
+      color:white;
+      padding:5px 0;   /* bar inceltildi */
+      text-align:center;
+      font-family:'Montserrat', sans-serif;
+      font-weight:600;
+      letter-spacing:1px;
+    }
+    nav a {
+      margin:0 12px;
+      color:white;
+      text-decoration:none;
+      font-size:20px;   /* yazılar büyütüldü */
+      font-weight:bold;
+      transition:color 0.3s ease;
+    }
     nav a:hover { color:#ffcccc; }
+
     .hero { text-align:center; padding:80px 20px; animation: fadeIn 2s ease-in; }
     .hero h1 { font-family:'Montserrat', sans-serif; font-size:52px; color:#e0e0e0; font-weight:300; letter-spacing:2px; }
     .download { margin-top:40px; }
@@ -61,10 +78,10 @@
     </div>
   </div>
 
-  <!-- Örnek kartlar -->
   <section id="amac" class="card">
     <h2>Projenin Amacı</h2>
-    <p>... (burada uzun açıklama olacak) ...</p>
+    <p>Lithium, modern Windows sistemlerinde gereksiz yükleri ortadan kaldırarak kullanıcıya daha hızlı,
+    güvenli ve sürdürülebilir bir deneyim sunmayı amaçlar.</p>
   </section>
 
   <section id="senaryolar" class="card">
