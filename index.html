@@ -6,17 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Roboto', sans-serif; margin:0; background:#f9f9f9; color:#333; }
+    body { font-family: 'Roboto', sans-serif; margin:0; background:#121212; color:#e0e0e0; }
     header { background:#800000; color:white; padding:20px; text-align:center; font-family:'Montserrat', sans-serif; }
     nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold; }
     .hero { text-align:center; padding:60px 20px; }
-    .hero h1 { font-family:'Montserrat', sans-serif; font-size:42px; color:#800000; }
+    .hero h1 { font-family:'Montserrat', sans-serif; font-size:42px; color:#e0e0e0; }
     .download { margin-top:30px; }
     .download a img { height:60px; }
-    .download p { margin-top:10px; font-size:14px; color:#555; }
-    section { padding:40px 20px; max-width:900px; margin:auto; }
-    h2 { font-family:'Montserrat', sans-serif; color:#800000; margin-bottom:20px; }
+    .download p { margin-top:10px; font-size:14px; color:#bbb; }
+    section { padding:20px; max-width:900px; margin:20px auto; }
+    h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:15px; }
     ul { line-height:1.8; }
+    /* Kart/Kutu Tasarımı */
+    .card {
+      background:#1e1e1e;
+      border:1px solid #800000;
+      border-radius:8px;
+      padding:20px;
+      margin-bottom:20px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.5);
+    }
     /* Responsive */
     @media (max-width:768px) {
       .hero h1 { font-size:28px; }
@@ -27,6 +36,7 @@
     .lang-switch button { margin:0 5px; padding:8px 12px; border:none; background:#800000; color:white; cursor:pointer; border-radius:4px; }
     /* Footer */
     footer { background:#800000; color:white; text-align:center; padding:20px; margin-top:40px; font-size:14px; }
+    .signature { margin-top:10px; font-size:12px; color:#ccc; }
   </style>
 </head>
 <body>
@@ -38,6 +48,7 @@
       <a href="#neler">Neler Yapıldı</a>
       <a href="#download">İndir</a>
       <a href="#license">Lisans</a>
+      <a href="#iletisim">İletişim</a>
     </nav>
   </header>
 
@@ -57,12 +68,12 @@
     </div>
   </div>
 
-  <section id="neden">
+  <section id="neden" class="card">
     <h2>Neden Lithium</h2>
     <p id="nedenText">Gereksiz bileşenlerden arındırılmış, güvenli ve hızlı bir Windows ortamı sunar. Minimalizm ve sürdürülebilirlik felsefesiyle tasarlanmıştır.</p>
   </section>
 
-  <section id="gereksinimler">
+  <section id="gereksinimler" class="card">
     <h2>Sistem Gereksinimleri</h2>
     <ul>
       <li>Windows 10/11 uyumlu sistem</li>
@@ -72,7 +83,7 @@
     </ul>
   </section>
 
-  <section id="neler">
+  <section id="neler" class="card">
     <h2>Neler Yapıldı</h2>
     <ul>
       <li>Registry optimizasyonları</li>
@@ -82,8 +93,19 @@
     </ul>
   </section>
 
+  <section id="iletisim" class="card">
+    <h2>İletişim</h2>
+    <ul>
+      <li>Instagram: Yakında</li>
+      <li>TikTok: Yakında</li>
+      <li>YouTube: Yakında</li>
+      <li>Discord: Yakında</li>
+    </ul>
+  </section>
+
   <footer id="license">
     <p id="licenseText">📜 Bu proje MIT Lisansı ile lisanslanmıştır. Lithium’u kullanabilir, değiştirebilir ve dağıtabilirsiniz; tek şart uygun atıf yapmaktır.</p>
+    <div class="signature">LITHIUM PROJECT BY RHODIUM</div>
   </footer>
 
   <script>
