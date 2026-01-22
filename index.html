@@ -180,35 +180,93 @@
     <div class="signature">LITHIUM PROJECT BY RHODIUM</div>
   </footer>
 
-  <script>
-    const texts = {
-      tr: {
-        heroTitle: "Minimal, Güvenli ve Performans Odaklı",
-        heroDesc: "Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.",
-        downloadDesc: "Optimize edilmiş Windows deneyimi için Lithium’u indir.",
-        nedenText: "Lithium, modern Windows sistemlerinde gereksiz yükleri ortadan kaldırarak kullanıcıya daha hızlı, güvenli ve sürdürülebilir bir deneyim sunmayı amaçlar.",
-        licenseText: "📜 Tüm hakları saklıdır. Bu proje yalnızca resmi sürüm olarak kullanılabilir."
-      },
-      en: {
-        heroTitle: "Minimal, Secure and Performance-Oriented",
-        heroDesc: "Lithium is a minimal Windows optimization project focused on security and performance.",
-        downloadDesc: "Download Lithium for an optimized Windows experience.",
-        nedenText: "Lithium aims to provide a faster, secure, and sustainable experience by removing unnecessary loads from modern Windows systems.",
-        licenseText: "📜 All rights reserved. This project can only be used as the official release."
-      }
-    };
-
-    function setLang(lang) {
-      document.getElementById("heroTitle").innerText = texts[lang].heroTitle;
-      document.getElementById("heroDesc").innerText = texts[lang].heroDesc;
-      document.getElementById("downloadDesc").innerText = texts[lang].downloadDesc;
-      document.getElementById("nedenText").innerText = texts[lang].nedenText;
-      document.getElementById("licenseText").innerText = texts[lang].licenseText;
+<script>
+  const texts = {
+    tr: {
+      heroTitle: "Minimal, Güvenli ve Performans Odaklı",
+      heroDesc: "Lithium, güvenlik ve performans odaklı minimal Windows optimizasyon projesidir.",
+      downloadDesc: "Optimize edilmiş Windows deneyimi için Lithium’u indir.",
+      nedenText: "Lithium, modern Windows sistemlerinde gereksiz yükleri ortadan kaldırarak kullanıcıya daha hızlı, güvenli ve sürdürülebilir bir deneyim sunmayı amaçlar.",
+      senaryolarTitle: "Kullanım Senaryoları",
+      senaryolarList: [
+        "Ev kullanıcıları: Daha hızlı açılış",
+        "Oyun severler: FPS artışı",
+        "Kurumsal ortamlar: Güvenlik odaklı minimal yapı",
+        "Eski donanımlar: 512 MB RAM’de bile çalışır"
+      ],
+      katkiTitle: "Topluluk ve Katkı",
+      katkiText: "Lithium kapalı kaynak bir projedir. Kullanıcılar geri bildirim verebilir ama kodu değiştiremez.",
+      gereksinimlerTitle: "Sistem Gereksinimleri",
+      gereksinimlerMin: ["RAM: 512 MB", "Disk: 15 GB", "İşlemci: 1 çekirdek"],
+      gereksinimlerRec: ["RAM: 4 GB", "Disk: 64 GB", "İşlemci: 4 çekirdek"],
+      iletisimTitle: "İletişim",
+      iletisimList: ["Instagram: Yakında", "TikTok: Yakında", "YouTube: Yakında", "Discord: Yakında"],
+      licenseText: "📜 Tüm hakları saklıdır. Bu proje yalnızca resmi sürüm olarak kullanılabilir."
+    },
+    en: {
+      heroTitle: "Minimal, Secure and Performance-Oriented",
+      heroDesc: "Lithium is a minimal Windows optimization project focused on security and performance.",
+      downloadDesc: "Download Lithium for an optimized Windows experience.",
+      nedenText: "Lithium aims to provide a faster, secure, and sustainable experience by removing unnecessary loads from modern Windows systems.",
+      senaryolarTitle: "Usage Scenarios",
+      senaryolarList: [
+        "Home users: Faster startup",
+        "Gamers: Increased FPS",
+        "Corporate environments: Security-focused minimal setup",
+        "Old hardware: Works even with 512 MB RAM"
+      ],
+      katkiTitle: "Community and Contribution",
+      katkiText: "Lithium is a closed-source project. Users can provide feedback but cannot modify the code.",
+      gereksinimlerTitle: "System Requirements",
+      gereksinimlerMin: ["RAM: 512 MB", "Disk: 15 GB", "CPU: 1 core"],
+      gereksinimlerRec: ["RAM: 4 GB", "Disk: 64 GB", "CPU: 4 cores"],
+      iletisimTitle: "Contact",
+      iletisimList: ["Instagram: Coming soon", "TikTok: Coming soon", "YouTube: Coming soon", "Discord: Coming soon"],
+      licenseText: "📜 All rights reserved. This project can only be used as the official release."
     }
+  };
 
-    function toggleTheme() {
-      document.body.classList.toggle("light");
-    }
-  </script>
+  function setLang(lang) {
+    document.getElementById("heroTitle").innerText = texts[lang].heroTitle;
+    document.getElementById("heroDesc").innerText = texts[lang].heroDesc;
+    document.getElementById("downloadDesc").innerText = texts[lang].downloadDesc;
+    document.getElementById("nedenText").innerText = texts[lang].nedenText;
+    document.getElementById("licenseText").innerText = texts[lang].licenseText;
+
+    // Usage Scenarios
+    document.querySelector("#senaryolar h2").innerText = texts[lang].senaryolarTitle;
+    const senaryolarItems = document.querySelectorAll("#senaryolar ul li");
+    texts[lang].senaryolarList.forEach((text, i) => {
+      senaryolarItems[i].innerText = text;
+    });
+
+    // Contribution
+    document.querySelector("#katki h2").innerText = texts[lang].katkiTitle;
+    document.querySelector("#katki p").innerText = texts[lang].katkiText;
+
+    // Requirements
+    document.querySelector("#gereksinimler h2").innerText = texts[lang].gereksinimlerTitle;
+    const minItems = document.querySelectorAll("#gereksinimler .req-box:first-child ul li");
+    texts[lang].gereksinimlerMin.forEach((text, i) => {
+      minItems[i].innerText = text;
+    });
+    const recItems = document.querySelectorAll("#gereksinimler .req-box:last-child ul li");
+    texts[lang].gereksinimlerRec.forEach((text, i) => {
+      recItems[i].innerText = text;
+    });
+
+    // Contact
+    document.querySelector("#iletisim h2").innerText = texts[lang].iletisimTitle;
+    const contactItems = document.querySelectorAll("#iletisim ul li");
+    texts[lang].iletisimList.forEach((text, i) => {
+      contactItems[i].innerText = text;
+    });
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle("light");
+  }
+</script>
+
 </body>
 </html>
