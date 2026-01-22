@@ -4,39 +4,61 @@
   <meta charset="UTF-8">
   <title>Lithium Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <!-- İnce ve geniş fontlar -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Roboto', sans-serif; margin:0; background:#121212; color:#e0e0e0; }
-    header { background:#800000; color:white; padding:20px; text-align:center; font-family:'Montserrat', sans-serif; }
+    body { font-family: 'Roboto Condensed', sans-serif; margin:0; background:#121212; color:#e0e0e0; line-height:1.8; }
+    header { background:#800000; color:white; padding:25px; text-align:center; font-family:'Montserrat', sans-serif; font-weight:600; letter-spacing:1px; }
     nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold; }
-    .hero { text-align:center; padding:60px 20px; }
-    .hero h1 { font-family:'Montserrat', sans-serif; font-size:42px; color:#e0e0e0; }
-    .download { margin-top:30px; }
-    .download a img { height:60px; }
-    .download p { margin-top:10px; font-size:14px; color:#bbb; }
-    section { padding:20px; max-width:900px; margin:20px auto; }
-    h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:15px; }
-    ul { line-height:1.8; }
+    .hero { text-align:center; padding:100px 20px; animation: fadeIn 2s ease-in; }
+    .hero h1 { font-family:'Montserrat', sans-serif; font-size:52px; color:#e0e0e0; font-weight:300; letter-spacing:2px; }
+    .download { margin-top:40px; }
+    .download a img { height:80px; transition: transform 0.3s ease; }
+    .download a img:hover { transform: scale(1.1); }
+    .download p { margin-top:15px; font-size:18px; color:#bbb; }
+    section { padding:40px; max-width:1100px; margin:40px auto; }
+    h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:25px; font-weight:400; letter-spacing:1px; }
+    ul { line-height:2; font-size:18px; }
     /* Kart/Kutu Tasarımı */
     .card {
       background:#1e1e1e;
       border:1px solid #800000;
-      border-radius:8px;
-      padding:20px;
-      margin-bottom:20px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.5);
+      border-radius:12px;
+      padding:40px;
+      margin-bottom:40px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.7);
+      animation: fadeInUp 1.5s ease;
     }
+    .card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+    /* Sistem Gereksinimleri özel kutular */
+    .requirements { display:flex; flex-wrap:wrap; gap:30px; }
+    .req-box {
+      flex:1;
+      min-width:280px;
+      background:#2a2a2a;
+      border:1px solid #800000;
+      border-radius:10px;
+      padding:30px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.6);
+      animation: fadeInUp 2s ease;
+    }
+    .req-box h3 { color:#ffcccc; font-family:'Montserrat', sans-serif; font-weight:400; margin-bottom:20px; letter-spacing:1px; }
+    .req-box ul { list-style:none; padding:0; font-size:16px; line-height:2; }
+    .req-box li { margin-bottom:12px; }
+    /* Animasyonlar */
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
     /* Responsive */
     @media (max-width:768px) {
-      .hero h1 { font-size:28px; }
-      .download a img { height:50px; }
+      .hero h1 { font-size:36px; }
+      .download a img { height:60px; }
     }
     /* Dil butonları */
-    .lang-switch { margin-top:20px; }
-    .lang-switch button { margin:0 5px; padding:8px 12px; border:none; background:#800000; color:white; cursor:pointer; border-radius:4px; }
+    .lang-switch { margin-top:30px; }
+    .lang-switch button { margin:0 8px; padding:10px 16px; border:none; background:#800000; color:white; cursor:pointer; border-radius:6px; font-size:14px; }
     /* Footer */
-    footer { background:#800000; color:white; text-align:center; padding:20px; margin-top:40px; font-size:14px; }
-    .signature { margin-top:10px; font-size:12px; color:#ccc; }
+    footer { background:#800000; color:white; text-align:center; padding:25px; margin-top:50px; font-size:15px; }
+    .signature { margin-top:12px; font-size:13px; color:#ccc; letter-spacing:1px; }
   </style>
 </head>
 <body>
@@ -75,12 +97,24 @@
 
   <section id="gereksinimler" class="card">
     <h2>Sistem Gereksinimleri</h2>
-    <ul>
-      <li>Windows 10/11 uyumlu sistem</li>
-      <li>En az 4 GB RAM</li>
-      <li>20 GB boş disk alanı</li>
-      <li>Sanal makine (test için önerilir)</li>
-    </ul>
+    <div class="requirements">
+      <div class="req-box">
+        <h3>En Düşük</h3>
+        <ul>
+          <li>RAM: 512 MB</li>
+          <li>Disk: 15 GB</li>
+          <li>İşlemci: 1 çekirdek</li>
+        </ul>
+      </div>
+      <div class="req-box">
+        <h3>Önerilen</h3>
+        <ul>
+          <li>RAM: 4 GB</li>
+          <li>Disk: 64 GB</li>
+          <li>İşlemci: 4 çekirdek</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="neler" class="card">
@@ -108,7 +142,7 @@
     <div class="signature">LITHIUM PROJECT BY RHODIUM</div>
   </footer>
 
-  <script>
+    <script>
     const texts = {
       tr: {
         heroTitle: "Minimal, Güvenli ve Performans Odaklı",
