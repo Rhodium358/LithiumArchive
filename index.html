@@ -4,33 +4,35 @@
   <meta charset="UTF-8">
   <title>Lithium Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+  <!-- İnce ve geniş fontlar -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Roboto Condensed', sans-serif; margin:0; background:#121212; color:#e0e0e0; line-height:1.9; }
 
-    /* Üst bar inceltilmiş */
+    /* Üst bar inceltilmiş ve yazılar çok ince */
     header {
       background:#800000;
       color:white;
-      padding:2px 0;   /* bar çok inceltildi */
+      padding:4px 0;   /* bar inceltildi */
       text-align:center;
       font-family:'Montserrat', sans-serif;
-      font-weight:600;
+      font-weight:200; /* çok ince font */
       letter-spacing:1px;
     }
     header h1 {
-      font-size:20px;   /* başlık küçültüldü */
-      margin:5px 0;
+      font-size:18px;   /* başlık küçültüldü */
+      margin:4px 0;
+      font-weight:200;  /* ince */
     }
     nav {
-      line-height:1.2;  /* menü satır yüksekliği daraltıldı */
+      line-height:1.2;
     }
     nav a {
-      margin:0 12px;
+      margin:0 20px;    /* aralarına daha fazla boşluk */
       color:white;
       text-decoration:none;
-      font-size:18px;   /* yazılar büyük */
-      font-weight:bold;
+      font-size:14px;   /* menü yazıları küçültüldü */
+      font-weight:200;  /* ince */
       transition:color 0.3s ease;
     }
     nav a:hover { color:#ffcccc; }
@@ -41,22 +43,27 @@
     .download a img { height:80px; transition: transform 0.3s ease; }
     .download a img:hover { transform: scale(1.1) rotate(-2deg); }
     .download p { margin-top:15px; font-size:16px; color:#bbb; }
-    section { padding:40px; max-width:1100px; margin:40px auto; }
-    h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:25px; font-weight:400; letter-spacing:1px; font-size:28px; }
-    ul { line-height:2; font-size:18px; }
+
+    section { padding:50px; max-width:1200px; margin:50px auto; }
+    h2 { font-family:'Montserrat', sans-serif; color:#ffcccc; margin-bottom:25px; font-weight:400; letter-spacing:1px; font-size:32px; }
+    ul { line-height:2.2; font-size:20px; }
+
+    /* Kart/Kutu Tasarımı */
     .card {
       background:#1e1e1e;
       border:1px solid #800000;
-      border-radius:12px;
-      padding:40px;
-      margin-bottom:40px;
-      box-shadow:0 6px 16px rgba(0,0,0,0.7);
+      border-radius:14px;
+      padding:60px;   /* kutular büyütüldü */
+      margin-bottom:50px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.7);
       animation: fadeInUp 1.5s ease;
       transition: transform 0.3s ease;
     }
     .card:hover { transform: scale(1.03); }
+
     @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
     @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+
     footer { background:#800000; color:white; text-align:center; padding:20px; margin-top:50px; font-size:15px; }
     .signature { margin-top:12px; font-size:13px; color:#ccc; letter-spacing:1px; }
   </style>
@@ -85,7 +92,6 @@
     </div>
   </div>
 
-  <!-- Kartlar -->
   <section id="amac" class="card">
     <h2>Projenin Amacı</h2>
     <p>...</p>
